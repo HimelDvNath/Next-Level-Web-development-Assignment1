@@ -6,8 +6,12 @@ const formatValue: FuncType = (param) => {
         return param.toUpperCase();
     } else if (typeof param === "number") {
         return param * 10;
-    } else {
+    } else if (typeof param === "boolean") {
         return !param;
+    } else {
+        throw new Error(
+            "Invalid input type. Only string, number, or boolean are allowed."
+        );
     }
 };
 
@@ -16,8 +20,9 @@ type InputType = string | any[];
 function getLength(param: InputType): number {
     if (typeof param === "string" || Array.isArray(param)) {
         return param.length;
+    } else {
+        throw new Error("Invalid input type. Only string, array are allowed.");
     }
-    return 0;
 }
 
 class Person {
@@ -36,7 +41,7 @@ type bookType = {
     title: string;
     rating: number;
 };
-function filterByRating(books: bookType[]): bookType[] | string {
+function filterByRating(books: bookType[]): bookType[] {
     let flag = false;
     const filteredBook: bookType[] = books.filter((book) => {
         if (book.rating >= 0 && book.rating <= 5) {
@@ -47,7 +52,10 @@ function filterByRating(books: bookType[]): bookType[] | string {
             flag = true;
         }
     });
-    return !flag ? filteredBook : "Wrong input on book rating";
+    if (flag) {
+        throw new Error("Wrong input on book rating");
+    }
+    return filteredBook;
 }
 
 type User = {
