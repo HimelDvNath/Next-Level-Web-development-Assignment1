@@ -126,7 +126,7 @@ function check(value: string | number) {
 যখন মানের টাইপ অজানা থাকে তখন `unknown` ব্যবহার করুন type safety বজায় রাখতে, যতটা সম্ভব `any` এড়িয়ে চলুন, এবং প্রোগ্রামে অসম্ভব পরিস্থিতি পরিচালনার জন্য `never` ব্যবহার করুন। এভাবে TypeScript কোডে type safety এবং predictability সর্বাধিক রাখা যায়।
 
 ## 4. What is the use of enums in TypeScript? Provide an example of a numeric and string enum.
-উত্তরঃ ypeScript-এ Enums ব্যবহার করা হয় একটি নির্দিষ্ট set এর named constants define করার জন্য। এটি কোডকে বেশি readable এবং maintainable করে, কারণ arbitrary মানের পরিবর্তে অর্থপূর্ণ নাম ব্যবহার করা যায়। Enums সাধারণত numeric বা string-based হতে পারে।
+উত্তরঃ TypeScript-এ Enums ব্যবহার করা হয় একটি নির্দিষ্ট set এর named constants define করার জন্য। এটি কোডকে বেশি readable এবং maintainable করে, কারণ arbitrary মানের পরিবর্তে অর্থপূর্ণ নাম ব্যবহার করা যায়। Enums সাধারণত numeric বা string-based হতে পারে।
 
 Numeric Enum উদাহরণঃ
 Numeric enums ডিফল্টভাবে 0 থেকে শুরু করে এবং প্রতি member এর জন্য 1 করে বৃদ্ধি পায়।
